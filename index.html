@@ -511,18 +511,19 @@
         }
 
         /* Boutons de l'app */
+        /* Boutons de l'app */
         .app-buttons {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr); /* 2 colonnes au lieu de 3 pour les 4 boutons */
             gap: 10px;
         }
 
         .app-btn {
             display: flex;
-            flex-direction: column;
+            flex-direction: row; /* Aligne l'icône et le texte sur la même ligne */
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 8px;
             padding: 12px 8px;
             border-radius: 14px;
             text-decoration: none;
@@ -531,10 +532,11 @@
             transition: 0.2s;
             border: 1px solid transparent;
             font-family: inherit;
+            white-space: nowrap; /* Empêche le texte de passer à la ligne */
         }
 
         .app-btn .btn-icon {
-            font-size: 18px;
+            font-size: 16px; /* Légèrement réduit pour s'aligner avec le texte */
             line-height: 1;
         }
 
@@ -996,7 +998,9 @@
             .nav-links { gap: 15px; }
             .nav-links a { font-size: 14px; }
             .app-card h2 { font-size: 22px; }
-            .app-buttons { grid-template-columns: 1fr; }
+            .app-buttons { 
+                grid-template-columns: 1fr; 
+            }
             .app-btn {
                 flex-direction: row;
                 gap: 8px;
@@ -1102,6 +1106,10 @@
                     <p class="app-desc" data-i18n="weather.desc"></p>
                     <ul class="app-features" data-i18n-list="weather.features"></ul>
                     <div class="app-buttons">
+                        <a href="https://github.com/ZengDevapps/clearskyweatherwidget" class="app-btn outline" target="_blank">
+                            <span class="btn-icon">🐙</span>
+                            <span data-i18n="common.github"></span>
+                        </a>
                         <a href="https://github.com/ZengDevapps/clearskyweatherwidget/releases" class="app-btn primary" target="_blank">
                             <span class="btn-icon">⬇️</span>
                             <span data-i18n="common.download"></span>
@@ -1127,6 +1135,10 @@
                     <p class="app-desc" data-i18n="battery.desc"></p>
                     <ul class="app-features" data-i18n-list="battery.features"></ul>
                     <div class="app-buttons">
+                        <a href="https://github.com/ZengDevapps/batteryinsight" class="app-btn outline" target="_blank">
+                            <span class="btn-icon">🐙</span>
+                            <span data-i18n="common.github"></span>
+                        </a>
                         <a href="https://github.com/ZengDevapps/batteryinsight/releases" class="app-btn primary" target="_blank">
                             <span class="btn-icon">⬇️</span>
                             <span data-i18n="common.download"></span>
@@ -1299,6 +1311,7 @@
             "common.download": "Download",
             "common.issues": "Issues",
             "common.discussions": "Discussions",
+			"common.github": "GitHub",
             "deepin.badge": "Discover the OS",
             "deepin.title": "Powered by <span class='highlight'>Deepin Linux</span>",
             "deepin.p1": "Deepin is a modern, elegant, and open-source Linux distribution developed by Wuhan Deepin Technology. Known for its beautiful Deepin Desktop Environment (DDE), it offers a smooth and refined experience right out of the box.",
@@ -1373,6 +1386,7 @@
             "common.download": "Télécharger",
             "common.issues": "Signaler",
             "common.discussions": "Discussions",
+			"common.github": "GitHub",
             "deepin.badge": "Découvrir l'OS",
             "deepin.title": "Propulsé par <span class='highlight'>Deepin Linux</span>",
             "deepin.p1": "Deepin est une distribution Linux moderne, élégante et open source développée par Wuhan Deepin Technology. Connue pour son magnifique environnement de bureau Deepin Desktop Environment (DDE), elle offre une expérience fluide et raffinée dès l'installation.",
@@ -1447,6 +1461,7 @@
             "common.download": "下载",
             "common.issues": "反馈",
             "common.discussions": "讨论",
+			"common.github": "GitHub",
             "deepin.badge": "了解操作系统",
             "deepin.title": "由 <span class='highlight'>Deepin Linux</span> 驱动",
             "deepin.p1": "Deepin 是由武汉深之度科技开发的现代、优雅且开源的 Linux 发行版。以其精美的深度桌面环境 (DDE) 而闻名，开箱即用，带来流畅精致的体验。",
